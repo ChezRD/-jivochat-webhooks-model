@@ -1,0 +1,36 @@
+{
+  "name": "chezrd/jivochat-webhooks-model",
+  "description": "Library for parsing Jivochat (Jivosite) Webhooks API Requests into structured Model.",
+  "type": "library",
+  "keywords": [
+    "Jivochat",
+    "Jivosite",
+    "Webhooks API"
+  ],
+  "homepage": "https://github.com/ChezRD/jivochat-webhooks-model",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Evgeny Rumiantsev",
+      "email": "chezrd@gmail.com",
+      "homepage": "https://github.com/ChezRD",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "email": "chezrd@gmail.com",
+    "issues": "https://github.com/ChezRD/jivochat-webhooks-model/issues",
+    "source": "https://github.com/ChezRD/jivochat-webhooks-model",
+    "docs": "https://github.com/ChezRD/jivochat-webhooks-model"
+  },
+  "require": {
+    "php": "^7.3 || ^8",
+    "doctrine/collections": "^1.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "ChezRD\\Jivochat\\Webhooks\\Model\\": "src/"
+    }
+  },
+  "minimum-stability": "stable"
+}
