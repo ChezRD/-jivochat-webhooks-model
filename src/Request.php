@@ -22,6 +22,9 @@ class Request
 {
     use PopulateObjectViaArray;
 
+    /** @var string Name of the event from jivosite (e.g. "offline_message"). */
+    public $event_name;
+
     /** @var string Channel widget ID, it can be found in the chat code (e.g. "3948"). */
     public $widget_id;
 
