@@ -6,7 +6,6 @@ use ChezRD\Jivochat\Webhooks\Model\Request\Chat\Message;
 use ChezRD\Jivochat\Webhooks\Model\Traits\PopulateObjectViaArray;
 use Doctrine\Common\Collections\ArrayCollection;
 use DateTime;
-use DateTimeZone;
 
 /**
  * Holds data on completed chatting (chat rank and messages list).
@@ -32,10 +31,10 @@ class Chat
     public $invitation;
 
     /** @var DateTime|null Time when chat started */
-    private $_chat_initiated_at;
+    private $_chat_initiated_at = null;
 
     /** @var DateTime|null Time when agent first time responded */
-    private $_chat_first_response_at;
+    private $_chat_first_response_at = null;
 
     /**
      * Setter for {@link messages} property.
@@ -77,10 +76,9 @@ class Chat
 
             $this->_chat_initiated_at = new DateTime('@' . $first->timestamp);
 
-            $this->_chat_first_response_at = new DateTime('@' . $first_agent_response->timestamp);
-        } else {
-            $this->_chat_initiated_at = null;
-            $this->_chat_first_response_at = null;
+            if ( !empty( $first_agent_response ) ) {
+                $this->_chat_first_response_at = new DateTime('@' . $first_agent_response->timestamp);
+            }
         }
     }
 
