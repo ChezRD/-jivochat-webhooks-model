@@ -145,7 +145,7 @@ class Request
      */
     public function setAssignedAgent($data)
     {
-        return $this->populateFieldData('assigned_agent', Agent::class, $data, true, true);
+        return $this->populateFieldData('assigned_agent', Agent::class, $data, false, true);
     }
 
     /**
